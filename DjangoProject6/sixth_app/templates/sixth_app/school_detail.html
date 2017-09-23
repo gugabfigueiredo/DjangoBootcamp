@@ -1,0 +1,20 @@
+{% extends "sixth_app/base.html" %}
+
+    {% block title %}Django DetailView{% endblock %}
+
+    {% block body %}
+        <h1>Welcome to Django DetailView Example</h1>
+        <h2>School Details:</h2>
+        <p>Name: {{ school_detail.name }}</p>
+        <p>Principal: {{ school_detail.principal }}</p>
+        <p>Location: {{ school_detail.location }}</p>
+        <h3>Students:</h3>
+        {% for student in school_detail.students.all %}
+            <p>{{ student.name }} who is {{ student.age }} years old.</p>
+        {% endfor %}
+
+        <div class="container">
+            <p><a class="btn btn-warning" href="{% url 'sixth_app:update' pk=school_detail.pk %}">Update</a></p>
+            <p><a class="btn btn-warning" href="{% url 'sixth_app:delete' pk=school_detail.pk %}">Delete</a></p>
+        </div>
+    {% endblock %}

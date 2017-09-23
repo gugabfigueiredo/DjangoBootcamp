@@ -1,0 +1,12 @@
+{% extends "sixth_app/base.html" %}
+
+    {% block title %}Django ListView{% endblock %}
+
+    {% block body %}
+        <h1>Welcome to Django ListView Exampel</h1>
+        <ol>
+            {% for school in school_list %}
+                <h2><li><a href="{{ school.id }}">{{ school.name }}</a></li></h2>
+            {% endfor %}
+        </ol>
+    {% endblock %}

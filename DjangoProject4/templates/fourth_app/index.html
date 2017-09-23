@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+{% extends "fourth_app/base.html" %}
+
+    {% load my_extras %}
+
+    {% block title %}
+        Index Page
+    {% endblock %}
+
+    {% block body_block %}
+        <h1>This is the index page</h1>
+        <h1>{{ text|trim:"hello" }}</h1>
+        <h1>{{ number|add:"99" }}</h1>
+    {% endblock %}

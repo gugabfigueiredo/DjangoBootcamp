@@ -1,0 +1,16 @@
+{% extends "sixth_app/base.html" %}
+
+    {% block title %}School DeleteView{% endblock %}
+
+    {% block body %}
+        <h1>Delete {{ school.name }}?</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="submit" class="btn btn-danger" value="Confirm">
+            <p><a href="{% url 'sixth_app:detail' pk=school.pk %}">Cancel</a></p>
+        </form>
+    {% endblock %}
+
+    {% block footer %}
+
+    {% endblock %}
