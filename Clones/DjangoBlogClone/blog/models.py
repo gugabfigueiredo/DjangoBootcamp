@@ -16,7 +16,7 @@ class Post(models.Model):
 
     text = models.TextField()
 
-    created_date = models.DateTimeField(default=timezone.now())
+    created_date = models.DateTimeField(default=timezone.now)
 
     publish_date = models.DateTimeField(blank=True, null=True)
 
@@ -49,7 +49,7 @@ class Comment(models.Model):
 
     text = models.TextField()
 
-    created_date = models.DateTimeField(default=timezone.now())
+    created_date = models.DateTimeField(default=timezone.now)
 
     approved_comment = models.BooleanField(default=False)
 

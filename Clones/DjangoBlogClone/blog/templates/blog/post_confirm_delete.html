@@ -1,0 +1,19 @@
+{% extends "blog/base.html" %}
+
+    {% block title %}Delete Post{% endblock %}
+
+    {% block header %}
+
+    {% endblock %}
+
+    {% block body %}
+        <form method="POST">
+            {% csrf_token %}
+            <p>Are you sure you want to delete {{ object }}?</p>
+            <input class="btn dtn-danger" type="submit" value="Delete">
+        </form>
+    {% endblock %}
+
+    {% block footer %}
+
+    {% endblock %}
