@@ -29,19 +29,19 @@
         {% endif %}
 
         <hr>
-        <a class="btn btn-primary btn-comment" href="{% url 'add_comment' pk=post.pk %}">Add comment</a>
+        <a class="btn btn-primary btn-danger" href="{% url 'add_comment' pk=post.pk %}">Add comment</a>
 
         <div class="container">
             {% for comment in post.comments.all %}
                 <br>
-                {% if user.is_authentitaced or comment.approved_comment %}
+                {% if user.is_authenticated or comment.approved_comment %}
                     {{ comment.created_date }}
                     {% if not comment.approved_comment %}
-                        <a class="btn btn-default" href="{% url 'rmv_comment' pk=comment.pk %}">
-                            <span class="glyphicon glyphicon-pencil"></span>
-                        </a>
                         <a class="btn btn-primary" href="{% url 'apprv_comment' pk=comment.pk %}">
                             <span class="glyphicon glyphicon-ok"></span>
+                        </a>
+                        <a class="btn btn-danger" href="{% url 'rmv_comment' pk=comment.pk %}">
+                            <span class="glyphicon glyphicon-remove"></span>
                         </a>
 
                     {% endif %}
